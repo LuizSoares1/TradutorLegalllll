@@ -6,7 +6,7 @@ namespace TradutorHmmm.Data
 {
     public class TraducaoContext : DbContext
     {
-        public TraducaoContext(DbContextOptions<TraducaoContext> options) 
+        public TraducaoContext(DbContextOptions<TraducaoContext> options) : base(options)
         {
         }
 

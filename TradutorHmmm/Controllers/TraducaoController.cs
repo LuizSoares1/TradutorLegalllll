@@ -14,6 +14,7 @@ namespace TradutorHmmm.Controllers
         }
 
         [HttpPost]
+        [Route("adicionartraducao")]
         public IActionResult AdicionarTraducao([FromBody] Traducao traducao)
         {
             _context.Traducaos.Add(traducao);
