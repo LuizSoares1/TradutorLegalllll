@@ -10,6 +10,6 @@ namespace TradutorHmmm.Models
         [Required]
         public string Palavra { get; set; }
         [Required]
-        public string Traducaoo { get; set; }
+        public string PalavraTraduzida { get; set; }
     }
 }
