@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TradutorHmmm.Data;
+using TradutorHmmm.Data.Dto;
 using TradutorHmmm.Models;
 
 
@@ -32,9 +33,9 @@ public class TraducaoController : ControllerBase
 
     //Retorna justamente a porra da tradução
     [HttpGet]
-    public IActionResult ObterTraducao([FromBody]string palavra)
+    public IActionResult ObterTraducao([FromBody]ObterTraducaoRequest request)
     {
-        var traducao = _context.Traducaos.FirstOrDefault(e => e.Palavra == palavra);
+        var traducao = _context.Traducaos.FirstOrDefault(e => e.Palavra == request.Palavra);
         if (traducao == null)
         {
             return NotFound();
