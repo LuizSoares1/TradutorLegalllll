@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TradutorHmmm.Data;
 
+
+//CARA EU PESQUISEI TUDO SOBRE ESSA PARTE PROGRAM, E N VI ND 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("TraducaoConnect");
 // Add services to the container.

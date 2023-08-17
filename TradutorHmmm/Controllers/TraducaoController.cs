@@ -16,14 +16,21 @@ public class TraducaoController : ControllerBase
         _context = context;
     }
 
+    //Adiciona as duas caralhas de strings
+
     [HttpPost]
     public IActionResult AdicionarTraducao([FromBody] Traducao traducao)
     {
+        if(traducao == null || string.IsNullOrWhiteSpace(traducao.Palavra) || string.IsNullOrWhiteSpace(traducao.PalavraTraduzida))
+        {
+            return BadRequest();
+        }
         _context.Traducaos.Add(traducao);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(ObterTraducao), new {palavra =  traducao.Palavra}, traducao);
+        return Ok();    
     }
 
+    //Retorna justamente a porra da tradução
     [HttpGet]
     public IActionResult ObterTraducao([FromBody]string palavra)
     {
