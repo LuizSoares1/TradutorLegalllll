@@ -35,11 +35,11 @@ public class TraducaoController : ControllerBase
     [HttpGet]
     public IActionResult ObterTraducao([FromBody]ObterTraducaoRequest request)
     {
-        var traducao = _context.Traducaos.FirstOrDefault(e => e.Palavra == request.Palavra);
+        Traducao? traducao = _context.Traducaos.FirstOrDefault(f => f.Palavra == request.Palavra);
         if (traducao == null)
         {
             return NotFound();
-        }
-        return Ok(traducao);
+        }        
+        return Ok(traducao.PalavraTraduzida);
     }
 }
