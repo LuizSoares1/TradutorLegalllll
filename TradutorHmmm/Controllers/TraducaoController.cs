@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TradutorHmmm.Data;
 using TradutorHmmm.Data.Dto;
 using TradutorHmmm.Models;
@@ -35,6 +35,8 @@ public class TraducaoController : ControllerBase
     [HttpGet]
     public IActionResult ObterTraducao([FromBody]ObterTraducaoRequest request)
     {
+
+        //Só pra lembrar que esse f na lambida é de foda-se, ideia de Magno :P
         Traducao? traducao = _context.Traducaos.FirstOrDefault(f => f.Palavra == request.Palavra);
         if (traducao == null)
         {
